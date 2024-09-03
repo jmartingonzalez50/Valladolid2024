@@ -11,6 +11,6 @@ del curso 2023-2024.
 - [Presentación de la UT-01](docs/ut01/ut1.pdf)
 
 **Ejercicios**
-- [Ejercicio 1](docs/ut01/ut1-ej1.pdf)
-- [Ejercicio 2](docs/ut01/ut1-ej2.pdf)
-- [Ejercicio 3](docs/ut01/ut1-ej3.pdf)
+- [Ejercicio 1](docs/ut1/ut1-ej1.pdf)
+- [Ejercicio 2](docs/ut1/ut1-ej2.pdf)
+- [Ejercicio 3](docs/ut1/ut1-ej3.pdf)
