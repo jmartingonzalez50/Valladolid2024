@@ -8,9 +8,18 @@ del curso 2023-2024.
 ### UT-01: Dispositivos Móviles
 
 **Contenido**
-- [Presentación de la UT-01](docs/ut01/ut1.pdf)
+- [Presentación de la UT-01](docs/ut1/ut1.pdf)
 
 **Ejercicios**
 - [Ejercicio 1](docs/ut1/ut1-ej1.pdf)
 - [Ejercicio 2](docs/ut1/ut1-ej2.pdf)
 - [Ejercicio 3](docs/ut1/ut1-ej3.pdf)
+
+
+### UT-02: Arquitectura
+
+**Contenido**
+- [Presentación de la UT-02](docs/ut2/ut2.pdf)
+
+**Ejercicios**
+- [Ejercicio 1](docs/ut2/ut2-ej1.pdf)
