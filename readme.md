@@ -23,3 +23,4 @@ del curso 2023-2024.
 
 **Ejercicios**
 - [Ejercicio 1](docs/ut2/ut2-ej1.pdf)
+- [Ejercicio 2](docs/ut2/ut2-ej2.pdf)
