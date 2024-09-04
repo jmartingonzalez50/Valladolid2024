@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.examplejavi.androidtraining2.R
@@ -37,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
             //      Su método toString() nos devuelve el texto del usuario
             val userName = findViewById<EditText>(R.id.input_username).text.toString()
             val password = findViewById<EditText>(R.id.input_password).text.toString()
-
+            val rememberIsChecked = findViewById<CheckBox>(R.id.check_remember).isChecked
             // Para pasárselo al ViewModel:
             val isValid = loginViewModel.validateClicked(userName, password)
 
