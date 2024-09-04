@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        loginFactory = LoginFactory()
+        loginFactory = LoginFactory(this)
         loginViewModel = loginFactory.provideLoginViewModel()
 
         setContentView(R.layout.activity_login)
@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
             val password = findViewById<EditText>(R.id.input_password).text.toString()
             val rememberIsChecked = findViewById<CheckBox>(R.id.check_remember).isChecked
             // Para pasárselo al ViewModel:
-            val isValid = loginViewModel.validateClicked(userName, password)
+            val isValid = loginViewModel.validateClicked(userName, password, rememberIsChecked)
 
             if (isValid){
                 // Snackbar: para mostrar un mensaje durante un tiempo
