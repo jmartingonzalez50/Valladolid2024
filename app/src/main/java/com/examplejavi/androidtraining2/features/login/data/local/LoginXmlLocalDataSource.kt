@@ -8,7 +8,6 @@ import android.content.Context
 
 class LoginXmlLocalDataSource (private val context: Context){
 
-
     val sharedPref = context.getSharedPreferences("username.xml", Context.MODE_PRIVATE)
     private val keyUsername = "key_username"
 
