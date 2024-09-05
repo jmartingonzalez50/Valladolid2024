@@ -12,6 +12,13 @@ import com.examplejavi.androidtraining2.R
 import com.examplejavi.androidtraining2.features.login.LoginFactory
 import com.google.android.material.snackbar.Snackbar
 
+
+// IMPORTANTE: EL ACTIVITY ACCEDE AL VIEWMODEL,
+//      PERO NUNCA AL REVÉS (POR GESTIÓN DE MEMORIA, EL MOVIL TIENE MEMORIA LIMITADA)
+// NUNCA HABRÁ UNA REFERENCIA DEL VIEWMODEL AL ACTIVITY
+
+
+
 class LoginActivity : AppCompatActivity() {
 
     // CREA 2 MÉTODOS A NIVEL DE CLASE, PARA QUE TODAS LAS FUNCIONES PUEDAN ACCEDER A ELLAS
@@ -29,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         setupView() // Función para configurar la vista
     }
-
     private fun setupView(){
         val actionValidate = findViewById<Button>(R.id.action_validate)
 
@@ -56,5 +62,22 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // IMPORTANTE: primero crea toda la interfaz y se muestra y posteriormente
+        // se buscará la información de sharedPreferences.
+
+        loginViewModel.onResumed()?.let{ username ->
+            // Si el username (it) no es nulo.
+            findViewById<EditText>(R.id.input_username).setText(username)
+        }
+        /*
+        loginViewModel.onResumed()?.let{
+            findViewById<EditText>(R.id.input_username).setText(it)
+        }
+         */
     }
 }

@@ -3,6 +3,8 @@ import android.content.Context
 import com.examplejavi.androidtraining2.features.login.data.LoginDataRepository
 import com.examplejavi.androidtraining2.features.login.data.local.LoginXmlLocalDataSource
 import com.examplejavi.androidtraining2.features.login.data.remote.LoginMockRemoteDataSource
+import com.examplejavi.androidtraining2.features.login.domain.DeleteUsernameUseCase
+import com.examplejavi.androidtraining2.features.login.domain.GetUsernameUseCase
 import com.examplejavi.androidtraining2.features.login.domain.LoginRepository
 import com.examplejavi.androidtraining2.features.login.domain.SaveUsernameUseCase
 import com.examplejavi.androidtraining2.features.login.domain.SignInUseCase
@@ -20,11 +22,16 @@ class LoginFactory(private val context: Context) {
     // Tiene que estar después: sino, crash en ejecución (objeto no instanciado)
     private val signInUseCase: SignInUseCase = provideSignInUseCase()
     private val saveUsernameUseCase: SaveUsernameUseCase = provideSaveUsernameUseCase()
+    private val deleteUsernameUseCase: DeleteUsernameUseCase = provideDeleteUsernameUseCase()
+    private val getUsernameUseCase: GetUsernameUseCase = provideGetUsernameUseCase()
 
+
+
+    // Métodos de clase
 
     fun provideLoginViewModel(): LoginViewModel{
         // Para crear una instancia de una clase:
-        return LoginViewModel(signInUseCase, saveUsernameUseCase)     // LoginViewModel() es como el new de Java
+        return LoginViewModel(signInUseCase, saveUsernameUseCase, deleteUsernameUseCase, getUsernameUseCase)     // LoginViewModel() es como el new de Java
     }
 
     private fun provideLoginMockRemoteDataSource(): LoginMockRemoteDataSource{
@@ -46,6 +53,12 @@ class LoginFactory(private val context: Context) {
         return SaveUsernameUseCase(loginRepository)
     }
 
+    private fun provideDeleteUsernameUseCase(): DeleteUsernameUseCase{
+        return DeleteUsernameUseCase(loginRepository)
+    }
 
+    private fun provideGetUsernameUseCase(): GetUsernameUseCase {
+        return GetUsernameUseCase(loginRepository)
+    }
 
 }

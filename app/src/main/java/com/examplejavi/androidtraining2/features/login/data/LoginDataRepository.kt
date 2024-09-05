@@ -20,5 +20,13 @@ class LoginDataRepository(
         localDataSource.saveUsername(userName)
     }
 
+    override fun deleteUsername() {
+        localDataSource.deleteUserName()
+    }
+
+    override fun getUsername(): String? {
+        return localDataSource.getUserName()
+    }
+
 
 }
