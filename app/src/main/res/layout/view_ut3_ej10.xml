@@ -41,7 +41,6 @@
             android:layout_marginStart="@dimen/small_spacing"
             android:text="Hazte Socio"
             android:textStyle="bold"
-            android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@id/img1"
             app:layout_constraintTop_toTopOf="@id/img1" />
 
