@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Importante, en el "Colabora" el width a match_parent para
+            que ocupe todo y despues con el textAlignment al Center-->
+
+        <TextView
+            android:id="@+id/txtColabora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colabora"
+            android:textColor="@color/blue"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_spacing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtColabora"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtHazteSocio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:text="Hazte Socio"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@id/img1"
+            app:layout_constraintTop_toTopOf="@id/img1" />
+
+        <!-- IMPORTANTE: para que no se "corte" el texto,
+                El Start: comienza al finalizar la imagen1
+                El End: es el parent
+                El layout_width: a 0dp
+                    De esta forma se estira su contenido hacia abajo-->
+        <TextView
+            android:id="@+id/txtHazteSocio_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:text="Colabora donando una cantidad fija durante X tiempo y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla blay bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla y bla bla bla bla bla bla bla bla bla "
+            app:layout_constraintStart_toEndOf="@id/img1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHazteSocio" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_spacing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHazteSocio_2"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtHazDonacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:text="Haz una donación"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@id/img2"
+            app:layout_constraintTop_toTopOf="@id/img2" />
+
+        <TextView
+            android:id="@+id/txtHazDonacion_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:text="Ayúdanos"
+            app:layout_constraintStart_toEndOf="@id/img2"
+            app:layout_constraintTop_toBottomOf="@id/txtHazDonacion" />
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_spacing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img2"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtTeaming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:textStyle="bold"
+            android:text="Teaming 1€"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@id/img3"
+            app:layout_constraintTop_toTopOf="@id/img3" />
+
+        <TextView
+            android:id="@+id/txtTeaming_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:text="Ayúdanos"
+            app:layout_constraintStart_toEndOf="@id/img2"
+            app:layout_constraintTop_toBottomOf="@id/txtTeaming" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
