@@ -27,24 +27,29 @@ class LoginFactory(private val context: Context) {
 
 
 
-    // Métodos de clase
+    // MÉTODOS DE CLASE:
 
+    // Provide clases PRESENTATION: ...ViewModel
     fun provideLoginViewModel(): LoginViewModel{
-        // Para crear una instancia de una clase:
-        return LoginViewModel(signInUseCase, saveUsernameUseCase, deleteUsernameUseCase, getUsernameUseCase)     // LoginViewModel() es como el new de Java
+        return LoginViewModel(signInUseCase, saveUsernameUseCase, deleteUsernameUseCase, getUsernameUseCase)
+            // LoginViewModel() es como el new de Java
+    }
+
+
+    // Provide clases DATA:
+    private fun provideLoginDataRepository(): LoginDataRepository{
+        return LoginDataRepository(loginXmlLocalDataSource, loginMockRemoteDataSource)
     }
 
     private fun provideLoginMockRemoteDataSource(): LoginMockRemoteDataSource{
         return LoginMockRemoteDataSource()
     }
 
-    private fun provideLoginDataRepository(): LoginDataRepository{
-        return LoginDataRepository(loginXmlLocalDataSource, loginMockRemoteDataSource)
-    }
-
     private fun provideLoginXmlLocalSource(): LoginXmlLocalDataSource {
         return LoginXmlLocalDataSource(context)
     }
+
+    // Provide clases DOMAIN: ...UseCase
     private fun provideSignInUseCase(): SignInUseCase{
         return SignInUseCase(loginRepository)
     }
